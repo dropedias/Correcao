@@ -13,13 +13,11 @@ using Correcao.Util;
 
 namespace Correcao.Controllers
 {
-    [RoutePrefix("api/usuario")]
     public class UsuarioController : ApiController
     {
         private CorrecaoContext db = new CorrecaoContext();
 
         // GET: api/Usuarios
-        [Route("getUsuarios")]
         public IQueryable<Usuario> GetUsuarios()
         {
             return db.Usuarios;
@@ -27,7 +25,6 @@ namespace Correcao.Controllers
 
         // GET: api/Usuarios/5
         [ResponseType(typeof(Usuario))]
-        [Route("getUsuario/{id}")]
         public IHttpActionResult GetUsuario(string id)
         {
             Usuario usuario = db.Usuarios.Find(id);
@@ -45,7 +42,6 @@ namespace Correcao.Controllers
 
         // PUT: api/Usuarios/5
         [ResponseType(typeof(void))]
-        [Route("putUsuario/{id}")]
         public IHttpActionResult PutUsuario(string id, Usuario usuario)
         {
             if (!ModelState.IsValid)
@@ -81,7 +77,6 @@ namespace Correcao.Controllers
 
         // POST: api/Usuarios
         [ResponseType(typeof(Usuario))]
-        [Route("postUsuario")]        
         public IHttpActionResult PostUsuario(Usuario usuario)
         {
             if (!ModelState.IsValid)
@@ -115,7 +110,6 @@ namespace Correcao.Controllers
                        
         // DELETE: api/Usuarios/5
         [ResponseType(typeof(Usuario))]
-        [Route("deleteUsuario/{id}")]
         public IHttpActionResult DeleteUsuario(string id)
         {
             Usuario usuario = db.Usuarios.Find(id);

@@ -12,13 +12,11 @@ using Correcao.Models;
 
 namespace Correcao.Controllers
 {
-    [RoutePrefix("api/questao")]
     public class QuestaoController : ApiController
     {
         private CorrecaoContext db = new CorrecaoContext();
 
         // GET: api/Questao
-        [Route("getQuestoes")]
         public IQueryable<Questao> GetQuestoes()
         {
             return db.Questoes;
@@ -26,7 +24,6 @@ namespace Correcao.Controllers
 
         // GET: api/Questao/5
         [ResponseType(typeof(Questao))]
-        [Route("getQuestao/{id}")]
         public IHttpActionResult GetQuestao(int id)
         {
             Questao questao = db.Questoes.Find(id);
@@ -40,7 +37,6 @@ namespace Correcao.Controllers
 
         // PUT: api/Questao/5
         [ResponseType(typeof(void))]
-        [Route("putQuestao/{id}")]
         public IHttpActionResult PutQuestao(int id, Questao questao)
         {
             if (!ModelState.IsValid)
@@ -76,7 +72,6 @@ namespace Correcao.Controllers
 
         // POST: api/Questao
         [ResponseType(typeof(Questao))]
-        [Route("postQuestao")]
         public IHttpActionResult PostQuestao(Questao questao)
         {
             if (!ModelState.IsValid)
@@ -107,7 +102,6 @@ namespace Correcao.Controllers
 
         // DELETE: api/Questao/5
         [ResponseType(typeof(Questao))]
-        [Route("deleteQuestao/{id}")]
         public IHttpActionResult DeleteQuestao(int id)
         {
             Questao questao = db.Questoes.Find(id);
