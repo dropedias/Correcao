@@ -27,7 +27,7 @@ namespace Correcao.Controllers
         [ResponseType(typeof(Usuario))]
         public IHttpActionResult GetUsuario(string id)
         {
-            if (id == "undefined") return null;
+            if (id == "undefined") return NotFound();
 
             Usuario usuario = db.Usuarios.Find(id);
 
