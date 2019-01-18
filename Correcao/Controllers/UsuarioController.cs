@@ -27,6 +27,8 @@ namespace Correcao.Controllers
         [ResponseType(typeof(Usuario))]
         public IHttpActionResult GetUsuario(string id)
         {
+            if (id == "undefined") return null;
+
             Usuario usuario = db.Usuarios.Find(id);
 
             var senhaDescripto = Criptografia.Decrypt(usuario.Senha);
