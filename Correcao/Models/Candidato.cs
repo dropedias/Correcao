@@ -25,6 +25,9 @@ namespace Correcao.Models
         [Column("ID_IMAGEM")]
         public int? IdImagem { get; set; }
 
+        [Column("VL_NOTA")]
+        public decimal? ValorNota { get; set; }
+
         public virtual Imagem Imagem { get; set; }
 
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

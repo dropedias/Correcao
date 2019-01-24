@@ -9,11 +9,11 @@ namespace Correcao.Models
     [Table("NOTAS")]
     public partial class Nota
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Nota()
-        {
-            Questao = new HashSet<Questao>();
-        }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //public Nota()
+        //{
+        //    Questao = new HashSet<Questao>();
+        //}
 
         [Key]
         [Column("ID_NOTA")]
@@ -23,7 +23,7 @@ namespace Correcao.Models
         [Column("VL_NOTA")]
         public decimal ValorNota { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Questao> Questao { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        //public virtual ICollection<Questao> Questao { get; set; }
     }
 }

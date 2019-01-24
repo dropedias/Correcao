@@ -19,7 +19,7 @@ namespace Correcao.Controllers
         // GET: api/Questao
         public IQueryable<Questao> GetQuestoes()
         {
-            IQueryable<Questao> questoes = db.Questoes.Include(x => x.Candidatos);
+            IQueryable<Questao> questoes = db.Questoes;
             return questoes;
             //return db.Questoes;
         }
@@ -51,6 +51,7 @@ namespace Correcao.Controllers
                 return BadRequest();
             }
 
+            //db.Entry<>
             db.Entry(questao).State = EntityState.Modified;
 
             try

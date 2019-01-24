@@ -26,10 +26,10 @@ namespace Correcao.Models
         [Column("ID_TIPO_QUESTAO")]
         public int? IdTipoQuestao { get; set; }
 
-        [Column("ID_NOTA")]
-        public int? IdNota { get; set; }
+        //[Column("ID_NOTA")]
+        //public int? IdNota { get; set; }
        
-        public virtual Nota Nota { get; set; }
+        //public virtual Nota Nota { get; set; }
         
         public virtual TipoQuestao TipoQuestao { get; set; }
 

@@ -26,10 +26,18 @@ namespace Correcao.Models
                 .Property(e => e.NomeCandidato)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<Candidato>()
+                .Property(e => e.ValorNota);                
+
             modelBuilder.Entity<Questao>()
                 .HasMany(e => e.Candidatos)
-                .WithMany(e => e.Questoes)
+                .WithMany(e => e.Questoes)                
                 .Map(m => m.ToTable("CANDIDATO_QUESTAO").MapLeftKey("ID_QUESTAO").MapRightKey("ID_CANDIDATO"));
+
+            //modelBuilder.Entity<Candidato>()
+            //    .HasMany(e => e.Questoes)
+            //    .WithMany(e => e.Candidatos)
+            //    .Map(m => m.ToTable("CANDIDATO_QUESTAO").MapLeftKey("ID_CANDIDATO").MapRightKey("ID_QUESTAO"));
 
             modelBuilder.Entity<Questao>()
                 .Property(e => e.DescricaoQuestao)
