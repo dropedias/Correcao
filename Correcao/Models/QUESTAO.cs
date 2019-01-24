@@ -9,6 +9,11 @@ namespace Correcao.Models
     [Table("QUESTAO")]
     public partial class Questao
     {
+        public Questao()
+        {
+            Candidatos = new HashSet<Candidato>();
+        }
+
         [Key]
         [Column("ID_QUESTAO")]
         public int IdQuestao { get; set; }
@@ -23,11 +28,12 @@ namespace Correcao.Models
 
         [Column("ID_NOTA")]
         public int? IdNota { get; set; }
+       
+        public virtual Nota Nota { get; set; }
+        
+        public virtual TipoQuestao TipoQuestao { get; set; }
 
-        //[Column("ID_NOTA")]
-        public Nota Nota { get; set; }
-
-        //[Column("ID_TIPO_QUESTAO")]
-        public TipoQuestao TipoQuestao { get; set; }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Candidato> Candidatos { get; set; }
     }
 }

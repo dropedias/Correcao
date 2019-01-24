@@ -16,10 +16,12 @@ namespace Correcao.Models
         }
 
         [Key]
+        [Column("ID_NOTA")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IdNota { get; set; }
 
-        public decimal? ValorNota { get; set; }
+        [Column("VL_NOTA")]
+        public decimal ValorNota { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Questao> Questao { get; set; }

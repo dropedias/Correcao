@@ -99,11 +99,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CandidatoController.cs" />
+    <Compile Include="Controllers\ImagemController.cs" />
     <Compile Include="Controllers\QuestaoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Candidato.cs" />
+    <Compile Include="Models\Imagem.cs" />
     <Compile Include="Models\Nota.cs" />
     <Compile Include="Models\Questao.cs" />
     <Compile Include="Models\TipoQuestao.cs" />

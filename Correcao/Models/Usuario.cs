@@ -16,5 +16,9 @@ namespace Correcao.Models
         [Required]
         [StringLength(50)]
         public string Senha { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Perfil { get; set; }
     }
 }

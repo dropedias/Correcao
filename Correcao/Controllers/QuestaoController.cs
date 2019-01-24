@@ -19,7 +19,9 @@ namespace Correcao.Controllers
         // GET: api/Questao
         public IQueryable<Questao> GetQuestoes()
         {
-            return db.Questoes;
+            IQueryable<Questao> questoes = db.Questoes.Include(x => x.Candidatos);
+            return questoes;
+            //return db.Questoes;
         }
 
         // GET: api/Questao/5
