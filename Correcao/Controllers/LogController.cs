@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Correcao.Util;
+using Correcao.Models;
 
 namespace Correcao.Controllers
 {
@@ -17,15 +18,15 @@ namespace Correcao.Controllers
         }
 
         // GET: api/Log/5
-        public string Get(int id)
+        public string Get(string value)
         {
             return "value";
         }
 
         // POST: api/Log
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Log log)
         {
-            LogWriter.WriteLog(value);
+            LogWriter.WriteLog(log.Key);
         }
 
         // PUT: api/Log/5

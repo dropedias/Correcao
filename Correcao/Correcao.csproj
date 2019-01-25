@@ -111,6 +111,7 @@
     </Compile>
     <Compile Include="Models\Candidato.cs" />
     <Compile Include="Models\Imagem.cs" />
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Nota.cs" />
     <Compile Include="Models\Questao.cs" />
     <Compile Include="Models\TipoQuestao.cs" />

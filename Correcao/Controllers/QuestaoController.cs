@@ -51,8 +51,13 @@ namespace Correcao.Controllers
                 return BadRequest();
             }
 
-            //db.Entry<>
+            foreach (var candidato in questao.Candidatos)
+            {
+                db.Entry(candidato).State = EntityState.Modified;
+            }
+                        
             db.Entry(questao).State = EntityState.Modified;
+            
 
             try
             {

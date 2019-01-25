@@ -28,6 +28,9 @@ namespace Correcao.Models
         [Column("VL_NOTA")]
         public decimal? ValorNota { get; set; }
 
+        [Column("LOCK")]
+        public bool? IsLock { get; set; }
+
         public virtual Imagem Imagem { get; set; }
 
         //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -27,7 +27,10 @@ namespace Correcao.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<Candidato>()
-                .Property(e => e.ValorNota);                
+                .Property(e => e.ValorNota);
+
+            modelBuilder.Entity<Candidato>()
+                .Property(e => e.IsLock);
 
             modelBuilder.Entity<Questao>()
                 .HasMany(e => e.Candidatos)
